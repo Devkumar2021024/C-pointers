@@ -1,0 +1,116 @@
+//Programm to show adress of avriable.
+#include <stdio.h>
+int main()
+{   /*    & = adress of operator */
+    /*             * =  opposite of assignment operator tales adress as arguement and retyrns value*/
+    int x = 4, y = 5;
+    printf("%d\n", &x); //adress of x
+    printf("%d\n", &y);   //adress of y
+    printf("%d\n", *&x);
+    printf("%d", *&y);
+    return 0;
+}
+-------------------------------------------------------------------------------------------
+// POINTERS
+#include <stdio.h>
+int main()
+{
+
+    /* NOTE = pointer stores 4-Bytes in 64-bit architecture*/
+    int x, *y;
+    x = 5;
+    y = &x;
+    printf("%d\n", x); // value of x
+    printf("%d\n", y); // adress of x
+    printf("%d\n", &y); //adress of y  
+    printf("%d\n", *&y); //adress of x    
+    return 0;
+}
+--------------------------------------------------------------------------------------------
+#include <stdio.h>
+void swap(int *n1, int *n2);
+
+int main()
+{
+    int num1 = 5, num2 = 10;
+
+    // address of num1 and num2 is passed
+    swap( &num1, &num2);
+
+    printf("num1 = %d\n", num1);
+    printf("num2 = %d", num2);
+    return 0;
+}
+
+void swap(int* n1, int* n2)
+{
+    int temp;
+    temp = *n1;
+    *n1 = *n2;
+    *n2 = temp;
+}
+----------------------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+    int a = 76;
+    int *ptr = &a;
+   printf("The adress of pointer to  a is = %d\n",  &ptr);   // Adress of a
+   printf("The adress of pointer to  a is = %d\n",  ptr);    // Adress of ptr
+   printf("The value of pointer is = %d\n", *ptr);  // *ptr = *&a == 76
+   return 0;
+}
+-----------------------------------------------------------------------------------------------------------
+// Program to print adress of variable
+#include <stdio.h>
+void point(int);
+int main()
+{
+    int i;
+    int *ptr;
+    ptr = &i;
+    printf("Adress of a is  = %d\n", ptr);
+    point(i);
+    return 0;
+}
+void point(int i)
+{ 
+    int *ptr;
+    ptr = &i;
+    printf("Adress of a in function is  = %d", ptr);
+}
+/*
+OUTPUT =
+Adress of a is  = 6422216
+Adress of a is  = 6422192
+*/
+--------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+int main()
+{
+    int a ;
+    int b = 10;
+    int *i;
+    i = &a;
+    printf("Value of a = %d  \n", a);
+    printf("Adress of a is = %d  \n", i);
+    printf("Value of is a is %d  \n", &i);
+
+
+    a =  *i + b;
+    i = &a;
+    printf("Value of a = %d \n ", a);
+    printf("Adress of a is = %d \n ", i);
+    printf("Value of is a is = %d \n ", &i);
+
+    return 0;
+}
+/*
+Value of a = 61  
+Adress of a is = 6422216  
+Value of is a is 6422212
+Value of a = 71
+ Adress of a is = 6422216
+ Value of is a is = 6422212
+*/
+-----------------------------------------------------------------------------------------------------------
